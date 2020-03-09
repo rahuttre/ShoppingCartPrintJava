@@ -1,0 +1,113 @@
+﻿/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package monitorzoo;
+
+import java.util.Scanner;
+import java.io.FileInputStream;
+import java.io.IOException;
+
+public class MonitorZoo {
+
+    public static void launchAnimals() throws IOException {
+        //Declares Animal class that opens file
+        //Open file
+        //close file
+        ReadAnimal subMenu = new ReadAnimal();
+        ReadAnimal animalSpec = new ReadAnimal();
+        String readLine = "";
+        String readLine2 = "";
+        String detailsOn = "";
+        String newString = "";
+        Scanner scnr2 = null;
+        
+        while(subMenu.hasInput()){
+            readLine = subMenu.readLine();
+            if (readLine.contains("Details on")) {
+                System.out.println(readLine);
+            }
+        }
+        
+        while (animalSpec.hasInput()){
+            readLine2 = animalSpec.readLine();
+        }
+
+        
+        /*System.out.println();
+        System.out.println("Select Animal to monitor:");
+        scnr2 = new Scanner(System.in);
+        //animalFile.setInput(scnr2);
+        
+        while(scnr2.hasNextLine()){
+                    
+        detailsOn = scnr2.nextLine();
+        
+        
+            //newString = detailsOn.replace("Animal - ", "");
+                System.out.println(detailsOn);
+            //}            
+        }
+        */
+            
+            //System.out.println(detailsOn);
+        
+        /*while (ReadAnimal object contains "Details on" in file){
+             read every "Details on" line to print menu
+        
+             Get input from user for selection
+        
+             if input contains animal in file
+        
+                print out the information
+        
+                if line contains "*****"
+        
+                    parse message into dialogue box
+        
+             
+        */
+  
+    }
+    
+    public static void launchHabitat() throws IOException {
+        //declares habitat class that opens file
+        //open file
+        //close file
+    }
+    
+    public static void main(String[] args) throws IOException {
+        Scanner scnr = new Scanner(System.in);
+        String mainOption = "";
+        boolean quit = false;
+        
+        System.out.println("Welcome to the Zoo monitoring system.");
+        System.out.println("Select item to examine: (A)nimal, (H)abitat, or (Q)uit ");
+        mainOption = scnr.nextLine();
+                    
+            switch(mainOption){
+                case "A":
+                case "a":
+                    launchAnimals();
+                    break;
+                
+                case "H":
+                case "h":
+                    //launchHabitat();
+                    break;
+                
+                case "Q":
+                case "q":
+                    System.out.println("Exiting program...");
+                    quit = true;
+                    break;
+                
+                default:
+                    System.out.println("Invalid input.");
+                    break;
+            }
+        }
+    }
+            
+    
